@@ -3,7 +3,6 @@ package config
 import (
 	"encoding/csv"
 	"errors"
-	"fmt"
 	"io"
 	"os"
 
@@ -67,7 +66,6 @@ type CountryCode struct {
 }
 
 func NewConfig(l *logrus.Logger) (*Config, error) {
-	fmt.Println("in config")
 	if err := godotenv.Load(); err != nil {
 		l.Fatal("No .env file found")
 	}
